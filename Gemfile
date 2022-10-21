@@ -40,3 +40,4 @@ gem 'net-smtp', require: false
 
 # users
 gem 'devise'
+gem 'devise-bootstrap-views', '~> 1.0'
