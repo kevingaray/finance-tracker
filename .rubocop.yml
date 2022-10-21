@@ -1,0 +1,32 @@
+AllCops:
+  Exclude:
+    - 'db/**/**'
+    - 'docs/**/**'
+    - 'specific-views-images/**/**'
+    - 'specific-views-pdf/**/**'
+    - 'vendor/**/**'
+    - 'bin/**/**'
+    - 'tmp/**/**'
+    - 'node_modules/**/**'
+    - 'config/**/**'
+    - 'Guardfile'
+    - 'app/controllers/concerns/**'
+    - 'lib/error/**'
+Metrics/ClassLength:
+  Exclude:
+    - 'spec/**/**'
+Metrics/AbcSize:
+  Exclude:
+    - 'app/helpers/**'
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - 'spec/**/**'
+Metrics/MethodLength:
+  Max: 15
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/**'
+Lint/MissingSuper:
+  Exclude:
+    - 'app/services/**/*'
