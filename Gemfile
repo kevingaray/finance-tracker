@@ -35,3 +35,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'net-imap', require: false
 gem 'net-pop', require: false
 gem 'net-smtp', require: false
+
+# users
+gem 'devise'
