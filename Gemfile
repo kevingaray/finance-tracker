@@ -45,3 +45,6 @@ gem 'devise-bootstrap-views', '~> 1.0'
 
 # stock info
 gem 'iex-ruby-client'
+
+# font-awesome
+gem "font-awesome-rails"
