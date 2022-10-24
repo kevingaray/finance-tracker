@@ -6,6 +6,7 @@ class Stock < ApplicationRecord
   has_many :users, through: :user_stocks
 
   validates :name, :ticker, presence: true
+  before_save { self.ticker = ticker.upcase }
 
   def self.new_lookup(ticker_symbol)
     client = IEX::Api::Client.new(
@@ -25,4 +26,12 @@ class Stock < ApplicationRecord
   def self.check_db(ticker_symbol)
     find_by(ticker: ticker_symbol)
   end
+
+  def update_last_prices
+    Stock.all.each do |stock|
+      stock.update(last_price: Stock.new_lookup(stock.ticker).last_price)
+    end
+  end
 end
+
+
