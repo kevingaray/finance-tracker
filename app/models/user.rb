@@ -35,6 +35,8 @@ class User < ApplicationRecord
     'Anonymous'
   end
 
+  # search function
+
   def self.search(param)
     param.strip!
     to_send_back = (first_name_matches(param) + last_name_matches(param) + email_matches(param)).uniq
@@ -57,4 +59,9 @@ class User < ApplicationRecord
   def self.matches(field_name, param)
     where("#{field_name} like ?", "%#{param}%")
   end
+
+  def not_friends_with?(id_of_friend)
+    !self.friends.where(id: id_of_friend).exists?
+  end
+
 end
